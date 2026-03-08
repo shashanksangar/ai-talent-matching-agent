@@ -1,0 +1,39 @@
+# Configuration for AI Talent Matching Agent
+
+# Matching algorithm parameters
+matching_algorithm:
+  model: "claude-sonnet-4-5"
+  temperature: 0.5
+  max_tokens: 1000
+
+# Scoring weights (must sum to 1.0)
+scoring_weights:
+  skills_match: 0.40
+  experience_fit: 0.30
+  domain_alignment: 0.20
+  trajectory_potential: 0.10
+
+# Thresholds
+min_match_score: 60  # Minimum score to consider a match (0-100)
+high_match_threshold: 80  # Score above this is considered excellent match
+
+# Candidate profile fields to analyze
+candidate_fields:
+  - skills
+  - experience_years
+  - research_domain
+  - publications
+  - previous_roles
+
+# Job requirement fields to analyze
+job_fields:
+  - job_title
+  - required_skills
+  - seniority_level
+  - domain
+  - experience_requirement
+
+# Output settings
+output_format: json
+include_reasoning: true
+batch_processing: true

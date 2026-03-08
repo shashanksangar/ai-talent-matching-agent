@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-talent-matching-agent"
+version = "0.1.0"
+description = "An agentic AI tool for matching candidates to specific roles"
+authors = [
+    {name = "Shashank Sangar", email = "ssangar@tesla.com"},
+]
+dependencies = [
+    "anthropic",
+    "requests",
+    "python-dotenv",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[project.scripts]
+matching-agent = "src.matching_agent:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
